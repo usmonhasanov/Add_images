@@ -48,13 +48,13 @@
           </select>
         </div>
      </form>
-        <div class="div row" ng-repeat="d in arr" >
-          <img ng-src="images/{{d.name}}.png" class="img-thumbnail image" alt="Cinque Terre"></img><br/>
-          <div class="btn-group" role="group" aria-label="...">
-          <button type="button" class="btn btn-default glyphicon glyphicon-chevron-left {{d.disabledleft}}" ng-click="moveleft($index)"></button>
-          <button type="button" class="btn btn-default glyphicon glyphicon-remove" ng-click="remove($index)"></button>
-          <button type="button" class="btn btn-default glyphicon glyphicon-chevron-right {{d.disabledright}}" ng-click="moveright($index)"></button>
-        </div>
+      <div class="div row" ng-repeat="d in arr" >
+        <img ng-src="images/{{d.name}}.png" class="img-thumbnail image" alt="Cinque Terre"></img><br/>
+        <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default glyphicon glyphicon-chevron-left {{d.disabledleft}}" ng-click="moveleft($index)"></button>
+        <button type="button" class="btn btn-default glyphicon glyphicon-remove" ng-click="remove($index)"></button>
+        <button type="button" class="btn btn-default glyphicon glyphicon-chevron-right {{d.disabledright}}" ng-click="moveright($index)"></button>
+      </div>
     </div>
   </div>
 </body>
