@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<script src= "js/angular.js"></script>
+<script src= "js/script.js"></script>
+<link rel="stylesheet" href="style/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<style>
+  .div{
+    <!-- width:100px; -->
+    height:150px;
+    background-color:#46B5A8;
+    float:left;
+    margin: 10px;
+    padding:10px;
+    border-color:red;
+    border-radius:10px;
+  }
+  
+  .maindiv{
+    height:250px;
+    background-color:rgb(218, 231, 215);
+    padding:10px;
+    margin:10px;
+  }
+  
+  .image{
+    width: 120px;
+    margin-bottom: 10px;
+    height:100px;
+  }
+  
+  .button {
+    margin:5px;
+    width:100px;
+  }
+ 
+</style>
+<body ng-app >
+  <div class="container">
+    <div ng-controller="ctrl"  class="maindiv well-large">
+      <form class="form-inline">
+        <div class="form-group">
+          <button class="btn btn-info"  ng-click="add()" >add</button>
+        </div>
+        <div class="form-group"> 
+          <select class="form-control" ng-model="myselected" ng-options="image.name for image in img">
+            <option value="">-choose-</option>
+          </select>
+        </div>
+     </form>
+        <div class="div row" ng-repeat="d in arr" >
+          <img ng-src="images/{{d.name}}.png" class="img-thumbnail image" alt="Cinque Terre"></img><br/>
+          <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-default glyphicon glyphicon-chevron-left {{d.disabledleft}}" ng-click="moveleft($index)"></button>
+          <button type="button" class="btn btn-default glyphicon glyphicon-remove" ng-click="remove($index)"></button>
+          <button type="button" class="btn btn-default glyphicon glyphicon-chevron-right {{d.disabledright}}" ng-click="moveright($index)"></button>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
